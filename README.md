@@ -1,3 +1,5 @@
+![Kubernetes Lab](https://img.shields.io/badge/Kubernetes_Lab-validé-brightgreen?style=for-the-badge&logo=kubernetes&logoColor=white)
+
 # Kubernetes Nginx Lab
 
 Ce projet est un laboratoire d’apprentissage progressif sur Kubernetes, réalisé dans un cluster Proxmox avec 1 master et 2 workers.
