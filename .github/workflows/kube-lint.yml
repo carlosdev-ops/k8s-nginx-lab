@@ -1,0 +1,27 @@
+name: Kubernetes YAML Linter
+
+on:
+  push:
+    paths:
+      - '**.yaml'
+      - '**.yml'
+      - '.github/workflows/**'
+
+jobs:
+  kube-lint:
+    runs-on: ubuntu-latest
+    name: Lint YAML Kubernetes files
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install kubeval
+        run: |
+          curl -s https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz | tar xz
+          sudo mv kubeval /usr/local/bin/
+
+      - name: Run kubeval on YAML files
+        run: |
+          find . -name "*.yaml" | xargs -I {} kubeval --strict {}
+
