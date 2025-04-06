@@ -1,5 +1,5 @@
 ![Kubernetes Lab](https://img.shields.io/badge/Kubernetes_Lab-validé-brightgreen?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Pop!_OS](https://img.shields.io/badge/Pop!_OS-22.04-blue?style=for-the-badge&logo=system76&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![Proxmox](https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox&logoColor=white)
 ![100% YAML](https://img.shields.io/badge/100%25-YAML-informational?style=for-the-badge&logo=yaml&logoColor=white)
 ![MySQL Lab](https://img.shields.io/badge/MySQL-✅-blue?style=for-the-badge&logo=mysql&logoColor=white)
