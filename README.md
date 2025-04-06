@@ -3,6 +3,7 @@
 ![Proxmox](https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox&logoColor=white)
 ![100% YAML](https://img.shields.io/badge/100%25-YAML-informational?style=for-the-badge&logo=yaml&logoColor=white)
 ![MySQL Lab](https://img.shields.io/badge/MySQL-✅-blue?style=for-the-badge&logo=mysql&logoColor=white)
+![CI](https://github.com/carlosdev-ops/k8s-nginx-lab/actions/workflows/kube-lint.yml/badge.svg)
 
 
 # Kubernetes Nginx Lab
