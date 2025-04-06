@@ -18,8 +18,10 @@ jobs:
 
       - name: Install kubeval
         run: |
-          curl -s https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz | tar xz
-          sudo mv kubeval /usr/local/bin/
+          curl -LO https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+          tar -xzf kubeval-linux-amd64.tar.gz
+          chmod +x kubeval
+          sudo mv kubeval /usr/local/bin/kubeval
 
       - name: Run kubeval on YAML files
         run: |
