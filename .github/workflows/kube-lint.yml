@@ -22,8 +22,7 @@ jobs:
           tar -xzf kubeval-linux-amd64.tar.gz
           chmod +x kubeval
           sudo mv kubeval /usr/local/bin/kubeval
-
       - name: Run kubeval on YAML files
         run: |
-          find . -name "*.yaml" | xargs -I {} kubeval --strict {}
+          find . -name "*.yaml" -print0 | xargs -0 -r -I {} kubeval --strict {}
 
