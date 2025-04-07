@@ -1,48 +1,54 @@
-![Kubernetes Lab](https://img.shields.io/badge/Kubernetes_Lab-validé-brightgreen?style=for-the-badge&logo=kubernetes&logoColor=white)
+# 🔧 Kubernetes NGINX Labs – by Carlos
+
+![CI](https://github.com/carlosdev-ops/kube-lab-nginx/actions/workflows/kube-lint.yml/badge.svg)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![Proxmox](https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox&logoColor=white)
 ![100% YAML](https://img.shields.io/badge/100%25-YAML-informational?style=for-the-badge&logo=yaml&logoColor=white)
-![MySQL Lab](https://img.shields.io/badge/MySQL-✅-blue?style=for-the-badge&logo=mysql&logoColor=white)
-![CI](https://github.com/carlosdev-ops/k8s-nginx-lab/actions/workflows/kube-lint.yml/badge.svg)
 ![Helm Chart](https://img.shields.io/badge/Helm-✅-0f1689?style=for-the-badge&logo=helm&logoColor=white)
 
+---
 
-# Kubernetes Nginx Lab
+## 📘 À propos du projet
 
-Ce projet est un laboratoire d’apprentissage progressif sur Kubernetes, réalisé dans un cluster Proxmox avec 1 master et 2 workers.
+Ce dépôt présente une série de laboratoires Kubernetes conçus pour apprendre, pratiquer et maîtriser les concepts clés liés aux déploiements manuels, à l’automatisation CI/CD, et à Helm.
 
-## 🎯 Objectifs
+Chaque labo est documenté, validé, versionné et exécuté dans un environnement virtualisé via Proxmox, avec des VMs Ubuntu 24.04.
 
-- Créer un namespace dédié (`nginx-lab`)
-- Déployer un pod Nginx simple
-- Passer à un Deployment avec 3 pods
-- Exposer le service avec NodePort
-- Tester une mise à jour sans interruption (rolling update)
-- Documenter chaque étape avec des fichiers Markdown
-- Versionner le tout dans un dépôt GitHub
+---
 
-## 🏗️ Structure du projet
+## 🚀 Récapitulatif des Labos terminés
 
-```bash
-.
-├── doc/
-│   ├── 01-namespace.md
-│   ├── 02-pod-nginx.md
-│   ├── 03-deployment-nginx.md
-│   ├── 04-service-nodeport.md
-│   ├── 05-rolling-update.md
-│   └── ...
-├── yaml/
-│   ├── nginx-deployment.yaml
-│   ├── nginx-pod.yaml
-│   └── nginx-service.yaml
-└── README.md
+| Labo | Titre                                | Description                                                                 |
+|------|--------------------------------------|-----------------------------------------------------------------------------|
+| ✅ 1 | Déploiement manuel d’un pod Nginx (YAML) | Fichiers YAML écrits à la main, exposés en NodePort                        |
+| ✅ 2 | Ingress Controller avec NGINX        | Installation du NGINX Ingress Controller et test d’accès HTTP              |
+| ✅ 3 | MySQL avec volumes persistants       | Déploiement avec PVC/PV (hostPath), nodeSelector et accès externe          |
+| ✅ 4 | CI/CD avec GitHub Actions            | Validation automatique des fichiers YAML Kubernetes via kubeval            |
+| ✅ 5 | Helm Chart personnalisé              | Création d’un chart Helm épuré, déploiement dynamique avec `values.yaml`   |
 
-## ✅ Labo 3 : MySQL avec volume persistant
+---
 
-- Déploiement de MySQL 5.7 avec mot de passe root
-- Volume persistant local via `hostPath`
-- Lien entre PV et PVC manuel (`storageClassName: ""`)
-- Pod placé explicitement sur `k8s-worker1` grâce à `nodeSelector`
-- Accès au port MySQL (3306) depuis l'extérieur via un `NodePort`
+## 🔜 Prochaine étape
 
+🎯 **Objectif Labo 6**  
+Mettre en place un pipeline GitHub Actions qui :
+- valide les charts Helm
+- déploie automatiquement dans le cluster Kubernetes via `helm upgrade --install`
+
+---
+
+## 🧠 Technologies utilisées
+
+- 🐧 Ubuntu 24.04
+- 🧱 Kubernetes (kubeadm, YAML)
+- 🔁 Helm 3
+- 🚀 GitHub Actions
+- 🧪 kubeval
+- 📦 Proxmox (infrastructure locale)
+- ✍️ Édition CLI : `vim`, `kubectl`, `helm`, `ks9`
+
+---
+
+## 📂 Structure du dépôt
+
+kube-lab-nginx/ ├── labs/ │ ├── nginx/ │ ├── ingress/ │ ├── mysql/ │ ├── cicd/ │ └── helm/ ├── .github/ │ └── workflows/ └── README.md
