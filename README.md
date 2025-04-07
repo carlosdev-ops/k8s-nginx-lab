@@ -4,6 +4,7 @@
 ![100% YAML](https://img.shields.io/badge/100%25-YAML-informational?style=for-the-badge&logo=yaml&logoColor=white)
 ![MySQL Lab](https://img.shields.io/badge/MySQL-✅-blue?style=for-the-badge&logo=mysql&logoColor=white)
 ![CI](https://github.com/carlosdev-ops/k8s-nginx-lab/actions/workflows/kube-lint.yml/badge.svg)
+![Helm Chart](https://img.shields.io/badge/Helm-✅-0f1689?style=for-the-badge&logo=helm&logoColor=white)
 
 
 # Kubernetes Nginx Lab
