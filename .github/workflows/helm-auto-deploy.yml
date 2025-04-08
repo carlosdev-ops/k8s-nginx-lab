@@ -17,14 +17,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup SSH key
+      - name: Setup SSH key and known_hosts
         run: |
-          mkdir -p $HOME/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > $HOME/.ssh/id_ed25519
-          chmod 600 $HOME/.ssh/id_ed25519
-          ssh-keyscan -H 10.0.0.2 >> $HOME/.ssh/known_hosts
-
-
+          install -m 700 -d ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p 22 -H 10.0.0.2 >> ~/.ssh/known_hosts
 
       - name: Run Helm on remote host
         run: |
