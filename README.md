@@ -1,5 +1,5 @@
 # 🔧 Kubernetes NGINX Labs – by Carlos
-![CI](https://github.com/carlosdev-ops/kube-lab-nginx/actions/workflows/kube-lint.yml/badge.svg?branch=main)
+![CI](https://github.com/carlosdev-ops/k8s-nginx-lab/actions/workflows/kube-lint.yml/badge.svg?branch=main)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![Proxmox](https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox&logoColor=white)
 ![100% YAML](https://img.shields.io/badge/100%25-YAML-informational?style=for-the-badge&logo=yaml&logoColor=white)
