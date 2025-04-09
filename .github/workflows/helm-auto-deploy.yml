@@ -10,27 +10,14 @@ on:
 
 jobs:
   deploy:
-    name: Deploy via SSH to k8s-master
-    runs-on: ubuntu-latest
-
+    name: Deploy via self-hosted runner
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Write SSH key to file
+      - name: Déploiement Helm local
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-
-      - name: Add known hosts
-        run: |
-          ssh-keyscan 10.0.0.2 >> ~/.ssh/known_hosts
-
-      - name: Run Helm on remote host
-        run: |
-          ssh -i ~/.ssh/id_ed25519 costac@10.0.0.2 << 'EOF'
-            cd ~/nginx-custom-chart
-            helm upgrade --install mon-nginx ./ --namespace nginx-lab --create-namespace
-          EOF
+          cd ~/kube-lab-nginx/nginx-custom-chart
+          helm upgrade --install mon-nginx ./ --namespace nginx-lab --create-namespace
 
