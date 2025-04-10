@@ -18,6 +18,6 @@ jobs:
 
       - name: Déploiement Helm local
         run: |
-          cd ~/kube-lab-nginx/nginx-custom-chart
+          cd nginx-custom-chart
           helm upgrade --install mon-nginx ./ --namespace nginx-lab --create-namespace
 
