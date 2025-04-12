@@ -4,6 +4,7 @@
 ![Proxmox](https://img.shields.io/badge/Proxmox-VE-orange?style=for-the-badge&logo=proxmox&logoColor=white)
 ![100% YAML](https://img.shields.io/badge/100%25-YAML-informational?style=for-the-badge&logo=yaml&logoColor=white)
 ![Helm Chart](https://img.shields.io/badge/Helm-✅-0f1689?style=for-the-badge&logo=helm&logoColor=white)
+![Helm Deploy](https://img.shields.io/badge/Helm--Deploy-%E2%9C%85-brightgreen)
 
 
 ---
