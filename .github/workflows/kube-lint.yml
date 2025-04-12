@@ -1,28 +1,30 @@
-name: Kubernetes YAML Linter
+name: Lint Kubernetes YAML
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - '**.yaml'
-      - '**.yml'
-      - '.github/workflows/**'
+      - '**/*.yaml'
 
 jobs:
-  kube-lint:
+  lint:
+    name: Validate YAML with kubeval
     runs-on: ubuntu-latest
-    name: Lint YAML Kubernetes files
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Install kubeval
         run: |
-          curl -LO https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
-          tar -xzf kubeval-linux-amd64.tar.gz
-          chmod +x kubeval
-          sudo mv kubeval /usr/local/bin/kubeval
-      - name: Run kubeval on YAML files
+          wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+          tar xf kubeval-linux-amd64.tar.gz
+          sudo mv kubeval /usr/local/bin
+
+      - name: Lint YAML (sans Helm)
         run: |
-          find . -name "*.yaml" ! -name "nginx-ingress.yaml" -print0 | xargs -0 -r -I {} kubeval {}
+          find . -name '*.yaml' \
+            ! -path "./nginx-custom-chart/*" \
+            -exec kubeval {} +
 
